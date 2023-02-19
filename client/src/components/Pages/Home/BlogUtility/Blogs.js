@@ -11,7 +11,7 @@ function Blogs({ blog }) {
         </Link>
         <div className="display-post-time">
           <p className="display-time">
-            {moment(blog.postedOn).fromNow()} {blog.userPosted}
+            {moment(blog.postedOn).fromNow()} by {blog.userPosted}
           </p>
         </div>
       </div>

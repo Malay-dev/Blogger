@@ -21,6 +21,8 @@
     transition: all 0.1s;
   }
   .each-story-heading {
+    text-decoration: none;
+    color: black;
     font-size:2.2rem;
     margin-bottom: 1rem;
   }
@@ -38,22 +40,8 @@
     justify-content: center;
     text-align: center;
   }
-  .add-story a {
-    margin: 5rem;
-    height: 6.4rem;
-    width: 6.4rem;
-    background-color: #ffc017;
-    display: inline-block;
-    padding: 1.6rem;
-    border-radius: 100px;
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 3rem;
-    cursor: pointer;
-  }
-  .add-story a:hover {
-    background-color: #ffd974;
+
+  .display-votes{
+    display: flex;
+    gap: 1rem;
   }

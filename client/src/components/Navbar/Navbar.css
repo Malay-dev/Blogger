@@ -3,8 +3,10 @@ position: fixed;
 }
 .nav {
 /* position: fixed; */
+    margin:10px 10px;
+    border-radius: 20px;
     height: 7.2rem;
-    background-color: #af50f3;
+    background-color: #88a4ff;
     color: #333;  
     display: flex;
     font-size: 2rem;

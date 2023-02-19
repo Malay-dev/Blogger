@@ -141,9 +141,10 @@ function BlogDetails() {
                               className="user-link"
                               style={{ color: "#0086d8" }}>
                               <Avatar
-                                backgroundColor={"Orange"}
-                                px="30px"
-                                py="40px">
+                                backgroundColor={"grey"}
+                                px="50px"
+                                py="50px"
+                                borderRadius="50px">
                                 {blog?.userPosted
                                   ?.charAt(0)
                                   ?.toLocaleUpperCase()}

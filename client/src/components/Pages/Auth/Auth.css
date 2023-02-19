@@ -11,12 +11,12 @@
 .auth-container{
     width: auto;
     padding: 1rem 2rem;
-    border: 10px solid #b779e4;
+    border: 10px solid #88a4ff;
     border-radius: 10%;
 }
 .auth-container {
 
-    padding: 1rem 2rem;
+    padding: 1rem 4rem;
     background-color: #fff;
     border-radius: 10px;
     display: flex;
