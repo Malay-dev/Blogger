@@ -2,7 +2,7 @@ import * as api from "../api";
 
 export const postBlog = (blogData, navigate) => async (dispatch) => {
   try {
-    const { data } = await api.postQuestion(blogData);
+    const { data } = await api.postBlog(blogData);
     dispatch({ type: "POST_BLOG", payload: data });
     dispatch(fetchAllBlogs());
     navigate("/");

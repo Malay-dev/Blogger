@@ -18,7 +18,7 @@ export const fetchAllUsers = () => API.get("/user/getAllUsers");
 /*------------------------------------------------------------------------------*/
 
 export const postBlog = (question) => API.post("/blogs/post", question);
-export const getAllBlogs = () => API.get("/blogs/get");
+export const fetchAllBlogs = () => API.get("/blogs/get");
 export const deleteBlog = (id) => API.delete(`/blogs/delete/${id}`);
 export const voteBlog = (id, value, userId) =>
   API.patch(`/blogs/vote/${id}`, { value, userId });
