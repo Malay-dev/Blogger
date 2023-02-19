@@ -1,9 +1,9 @@
 import React from "react";
 import Blogs from "./Blogs";
-function BlogsList({ blogsList }) {
+function BlogsList({ blogslist }) {
   return (
     <>
-      {blogsList.map((blog) => (
+      {blogslist.map((blog) => (
         <Blogs blog={blog} key={blog._id} />
       ))}
     </>

@@ -6,11 +6,11 @@ function Blogs({ blog }) {
   return (
     <div className="display-blog-container">
       <div className="display-votes">
-        <p>{blog.upVote.length - blog.downVote.length}</p>
+        {/* <p>{blog.upVote.length - blog.downVote.length}</p> */}
         <p>votes</p>
       </div>
       <div className="display-blog-details">
-        <Link to={`/blogs/${blog._id}`} className="display-blog-title">
+        <Link to={`/Post/${blog._id}`} className="display-blog-title">
           {blog.blogTitle}
         </Link>
         <div className="display-post-time">

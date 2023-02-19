@@ -6,7 +6,6 @@ const userSchema = mongoose.Schema({
   password: { type: String, required: true },
   dob: { type: Date, required: true },
   about: { type: String },
-  tags: { type: [String] },
   joinedOn: { type: Date, default: Date.now },
 });
 

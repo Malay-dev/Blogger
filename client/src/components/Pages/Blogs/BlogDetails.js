@@ -31,40 +31,40 @@ const downVote = (
 
 function BlogDetails() {
   const { id } = useParams();
-  //   const blogsList = useSelector((state) => state.blogsReducer);
+  const blogsList = useSelector((state) => state.postsReducer);
 
-  var blogsList = [
-    {
-      _id: "1",
-      upVotes: 3,
-      downVotes: 2,
-      blogTitle: "What is a function?",
-      blogBody: "It meant to be",
-      userPosted: "mano",
-      userId: 1,
-      postedOn: "jan 1",
-    },
-    {
-      _id: "2",
-      upVotes: 3,
-      downVotes: 2,
-      blogTitle: "What is a function?",
-      blogBody: "It meant to be",
-      userPosted: "mano",
-      userId: 1,
-      postedOn: "jan 1",
-    },
-    {
-      _id: "3",
-      upVotes: 3,
-      downVotes: 2,
-      blogTitle: "What is a function?",
-      blogBody: "It meant to be",
-      userPosted: "mano",
-      userId: 1,
-      postedOn: "jan 1",
-    },
-  ];
+  // var blogsList = [
+  //   {
+  //     _id: "1",
+  //     upVotes: 3,
+  //     downVotes: 2,
+  //     blogTitle: "What is a function?",
+  //     blogBody: "It meant to be",
+  //     userPosted: "mano",
+  //     userId: 1,
+  //     postedOn: "jan 1",
+  //   },
+  //   {
+  //     _id: "2",
+  //     upVotes: 3,
+  //     downVotes: 2,
+  //     blogTitle: "What is a function?",
+  //     blogBody: "It meant to be",
+  //     userPosted: "mano",
+  //     userId: 1,
+  //     postedOn: "jan 1",
+  //   },
+  //   {
+  //     _id: "3",
+  //     upVotes: 3,
+  //     downVotes: 2,
+  //     blogTitle: "What is a function?",
+  //     blogBody: "It meant to be",
+  //     userPosted: "mano",
+  //     userId: 1,
+  //     postedOn: "jan 1",
+  //   },
+  // ];
 
   const user = useSelector((state) => state.currentUserReducer);
   const location = useLocation();
@@ -105,6 +105,7 @@ function BlogDetails() {
   const handleDownVote = () => {
     dispatch(voteBlog(id, "downVote", user.result._id));
   };
+
   return (
     <div className="blog-details-page">
       {blogsList.data === null ? (

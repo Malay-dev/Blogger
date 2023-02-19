@@ -14,7 +14,7 @@ export const postBlog = (blogData, navigate) => async (dispatch) => {
 export const fetchAllBlogs = () => async (dispatch) => {
   try {
     const { data } = await api.fetchAllBlogs();
-    dispatch({ type: "FETCH_ALL_QUESTIONS", payload: data });
+    dispatch({ type: "FETCH_ALL_BLOGS", payload: data });
   } catch (error) {
     console.log(error);
   }

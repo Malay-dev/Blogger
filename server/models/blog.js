@@ -1,11 +1,11 @@
 import mongoose from "mongoose";
 
 const blogSchema = mongoose.Schema({
-  postTitle: { type: String, required: "Question must have a title" },
-  postBody: { type: String, required: "Question must hava a body" },
+  blogTitle: { type: String, required: "Blog must have a title" },
+  blogBody: { type: String, required: "Blog must hava a body" },
   upVote: { type: [String], default: [] },
   downVote: { type: [String], default: [] },
-  userPosted: { type: String, required: "Question must have an author" },
+  userPosted: { type: String, required: "Blog must have an author" },
   userId: { type: String },
   postedOn: { type: Date, default: Date.now },
   comment: [

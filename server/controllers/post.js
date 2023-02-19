@@ -1,11 +1,11 @@
-import blog from "../models/blog.js";
+import blogs from "../models/blog.js";
 import mongoose from "mongoose";
 
 export const postBlog = async (req, res) => {
   const postBlogData = req.body;
   const userId = req?.body?.userId;
 
-  const postBlog = new blog({
+  const postBlog = new blogs({
     ...postBlogData,
     userId,
   });
@@ -20,7 +20,7 @@ export const postBlog = async (req, res) => {
 
 export const getAllBlogs = async (req, res) => {
   try {
-    const blogList = await blog.find();
+    const blogList = await blogs.find();
     res.status(200).json(blogList);
   } catch (error) {
     console.log(error);
@@ -34,7 +34,7 @@ export const deleteBlog = async (req, res) => {
     return res.status(404).send("Blog unavailable...");
   }
   try {
-    await blog.findByIdAndRemove(_id);
+    await blogs.findByIdAndRemove(_id);
     res.status(200).json({ message: "Successfully deleted the blog..." });
   } catch (error) {
     console.log(error);
@@ -49,7 +49,7 @@ export const voteBlog = async (req, res) => {
     return res.status(404).send("Blog unavailable...");
   }
   try {
-    const blog = await blog.findById(_id);
+    const blog = await blogs.findById(_id);
     const upIndex = blog.upVote.findIndex((id) => id === String(userId));
     const downIndex = blog.downVote.findIndex((id) => id === String(userId));
     if (String(value) === "upVote") {
@@ -71,7 +71,7 @@ export const voteBlog = async (req, res) => {
         blog.downVote = blog.downVote.filter((id) => id !== String(userId));
       }
     }
-    await blog.findByIdAndUpdate(_id, blog);
+    await blogs.findByIdAndUpdate(_id, blog);
     res.status(200).json({ message: "voted successfully" });
   } catch (error) {
     console.log(error);
