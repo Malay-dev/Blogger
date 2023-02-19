@@ -24,7 +24,7 @@ function EditProfileForm({ currentUser, setSwitch }) {
   };
   return (
     <div>
-      <h1 className="edit-profile-title">Edit your Profile</h1>
+      {/* <h1 className="edit-profile-title">Edit your Profile</h1> */}
       <h2 className="edit-profile-title-2">Public Information</h2>
       <form className="edit-profile-form" onSubmit={handleSubmit}>
         <label htmlFor="name">
