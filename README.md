@@ -13,7 +13,7 @@
   <h3 align="center">Blogger</h3>
 
   <p align="center">
-    "It's a SBlogging platform - MERN stack app"
+    "It's a Blogging platform - MERN stack app"
     <br />
     <a href="https://blogger-x.netlify.app/">View Demo</a>
   </p>
