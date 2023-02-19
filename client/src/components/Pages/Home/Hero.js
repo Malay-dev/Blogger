@@ -9,7 +9,7 @@ import BlogsList from "./BlogUtility/BlogsList";
 function Hero() {
   const user = useSelector((state) => state.currentUserReducer);
   const blogsList = useSelector((state) => state.postsReducer);
-//   console.log(blogsList);
+  //   console.log(blogsList);
   const navigate = useNavigate();
   const redirect = (link) => {
     console.log("redirecting....");
@@ -18,18 +18,22 @@ function Hero() {
     }
     navigate(link);
   };
-   
+
   const location = useLocation();
   return (
-    <div className="home-main-bar">
-      <div className="main-bar-header">
-        {location.pathname === "/" ? <h1>Top blogs</h1> : <h1>All blogs</h1>}
+    <div className="hero-container">
+      <div className="hero-container-1">
+        {location.pathname === "/" ? (
+          <h1 className="heading-secondary">Top blogs</h1>
+        ) : (
+          <h1>All blogs</h1>
+        )}
         <button
           onClick={() => {
             user === null ? redirect("/Auth") : redirect("/postBlog");
           }}
-          className="ask-btn">
-          Post Blogs
+          className="post-btn">
+          Post your blogs ➕
         </button>
       </div>
       <div>
@@ -37,7 +41,7 @@ function Hero() {
           <h1>Loading...</h1>
         ) : (
           <>
-            <p>{blogsList.data.length} blogs</p>
+            <p className="heading-tertiary">{blogsList.data.length} blogs</p>
             <BlogsList blogslist={blogsList.data} />
           </>
         )}

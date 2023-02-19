@@ -13,13 +13,13 @@
     gap: 9.6rem;
   }
   .heading-secondary {
-    font-size: 10rem;
+    font-size: 2.5rem;
     font-weight: 700;
     font-family: "Times New Roman", Times, serif;
     color: #000;
   }
   .heading-tertiary {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 600;
     font-family: "Times New Roman", Times, serif;
     color: #333;
@@ -37,4 +37,16 @@
     font-family: "Times New Roman", Times, serif;
     color: #000;
   }
-  
+  .hero-container{
+    margin: 50px 50px;
+    display: flex;
+    flex-direction: column;
+    
+  }
+  .hero-container-1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    
+  }

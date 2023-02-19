@@ -171,7 +171,7 @@ function BlogDetails() {
                 <section>
                   <h4>Comments</h4>
                   <DisplayComments key={blog._id} blog={blog}></DisplayComments>
-                  <section className="post-comment-container">
+                  <section>
                     <form
                       onSubmit={(e) => {
                         handleCommentSubmit(e);
@@ -190,15 +190,15 @@ function BlogDetails() {
                     </form>
                   </section>
                 </section>
-                <section className="post-ans-container">
-                  <p>
+                <section>
+                  <p className="post-btn">
                     <Link
                       to="/PostBlog"
                       style={{
                         textDecoration: "none",
-                        color: "#009dff",
+                        color: "#fff",
                       }}>
-                      post your own blog
+                      Post your own blog
                     </Link>
                   </p>
                 </section>
