@@ -12,7 +12,7 @@ function Avatar({
 }) {
   const style = {
     backgroundColor,
-    color: color || "black",
+    color: color || "white",
     borderRadius,
     fontSize,
     width: `${px}`,

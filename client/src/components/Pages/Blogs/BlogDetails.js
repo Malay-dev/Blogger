@@ -3,7 +3,7 @@ import { useParams, Link, useNavigate, useLocation } from "react-router-dom";
 
 import DisplayComments from "./DisplayComments";
 import Avatar from "../../Avatar/Avatar";
-
+import "./Blog.css";
 import moment from "moment";
 
 import { useState } from "react";
@@ -107,7 +107,7 @@ function BlogDetails() {
   };
 
   return (
-    <div className="blog-details-page">
+    <div className="blog">
       {blogsList.data === null ? (
         <h1>Loading...</h1>
       ) : (
@@ -117,42 +117,51 @@ function BlogDetails() {
             .map((blog) => (
               <div key={blog._id}>
                 <section className="blog-details-container">
-                  <h1>{blog.blogTitle}</h1>
+                  <h1 className="blog-title">{blog.blogTitle}</h1>
                   <div className="blog-details-container-2">
-                    <div className="blog-votes">
-                      <div style={{ width: "18px" }} onClick={handleUpVote}>
-                        {upVote}
-                      </div>
-                      <p>{blog.upVote.length - blog.downVote.length}</p>
-                      <div style={{ width: "18px" }} onClick={handleDownVote}>
-                        {downVote}
-                      </div>
-                    </div>
                     <div style={{ width: "100%" }}>
-                      <p className="blog-body">{blog.blogBody}</p>
+                      <p className="blog-content ">{blog.blogBody}</p>
 
                       <div className="blog-actions-user">
                         <div>
-                          {user?.result?._id === blog?.userId && (
-                            <button type="button" onClick={handleDelete}>
-                              Delete
-                            </button>
-                          )}
+                          <div>
+                            {user?.result?._id === blog?.userId && (
+                              <button
+                                type="button"
+                                className=""
+                                onClick={handleDelete}>
+                                Delete
+                              </button>
+                            )}
+                          </div>
+                          <div>
+                            <p>posted {moment(blog.postedOn).fromNow()}</p>
+                            <Link
+                              to={`/Users/${blog.userId}`}
+                              className="user-link"
+                              style={{ color: "#0086d8" }}>
+                              <Avatar
+                                backgroundColor={"Orange"}
+                                px="30px"
+                                py="40px">
+                                {blog?.userPosted
+                                  ?.charAt(0)
+                                  ?.toLocaleUpperCase()}
+                              </Avatar>
+                              <div className="author">{blog.userPosted}</div>
+                            </Link>
+                          </div>
                         </div>
-                        <div>
-                          <p>posted {moment(blog.postedOn).fromNow()}</p>
-                          <Link
-                            to={`/Users/${blog.userId}`}
-                            className="user-link"
-                            style={{ color: "#0086d8" }}>
-                            <Avatar
-                              backgroundColor={"Orange"}
-                              px="30px"
-                              py="40px">
-                              {blog?.userPosted?.charAt(0)?.toLocaleUpperCase()}
-                            </Avatar>
-                            <div>{blog.userPosted}</div>
-                          </Link>
+                        <div className="blog-votes">
+                          <div style={{ width: "18px" }} onClick={handleUpVote}>
+                            {upVote}
+                          </div>
+                          <p>{blog.upVote.length - blog.downVote.length}</p>
+                          <div
+                            style={{ width: "18px" }}
+                            onClick={handleDownVote}>
+                            {downVote}
+                          </div>
                         </div>
                       </div>
                     </div>

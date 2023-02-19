@@ -1,0 +1,52 @@
+.section-compose {
+    padding: 9.6em 0 12.8rem 0;
+  }
+  .container {
+    /* 1140px */
+    max-width: 120rem;
+    padding: 0 3.2rem;
+    margin: 0 auto;
+  }
+  .compose {
+    background-color: #ffc62e;
+    border-radius: 2.5rem;
+    box-shadow: 0 10px 25px rgb(0 0 0/5%),0 20px 48px rgb(0 0 0/5%),0 1px 4px rgba(0,0,0,.1);
+    padding: 20px;
+    overflow: hidden;
+}
+  /* .compose {
+    box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
+    border-radius: 2.5rem;
+    background-color: #ffc62e;
+    padding: 2.3rem;
+    overflow: hidden;
+  } */
+  .compose-title {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+  .compose-text-box {
+    width: 100%;
+    font-size: 1.4rem;
+  }
+  
+  .compose-text-box input,
+  .compose-text-box textarea {
+    width: 50%;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    border: none;
+    margin-top: 0.5rem;
+  }
+
+  .post-btn{
+    background-color: black;
+    border: 5px solid black;
+    border-radius: 4px;
+    color: #fff;
+    font-weight: bolder;
+    cursor: pointer;
+    margin: 25px 0;
+    padding: 10px;
+    transition: .3s;
+  }

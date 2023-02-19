@@ -1,0 +1,40 @@
+.section-hero {
+    padding: 12rem 0 15rem 0;
+    background-color: #ffc017;
+    /* height: 100vh; */
+  }
+  .hero {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 3.2rem;
+    max-width: 130rem;
+    align-items: center;
+    margin: 0 auto;
+    gap: 9.6rem;
+  }
+  .heading-secondary {
+    font-size: 10rem;
+    font-weight: 700;
+    font-family: "Times New Roman", Times, serif;
+    color: #000;
+  }
+  .heading-tertiary {
+    font-size: 2rem;
+    font-weight: 600;
+    font-family: "Times New Roman", Times, serif;
+    color: #333;
+  }
+  .hero-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: flex-start;
+  }
+  .hero-img {
+    font-size: 20rem;
+    font-weight: 700;
+    text-align: center;
+    font-family: "Times New Roman", Times, serif;
+    color: #000;
+  }
+  

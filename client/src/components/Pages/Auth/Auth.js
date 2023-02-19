@@ -38,7 +38,7 @@ function Auth() {
   return (
     <div>
       <section className="auth-section">
-        <div className="auth-container-2">
+        <div className="auth-container">
           {/* {!IsSignUp && <div className="login-logo">{logo}</div>} */}
           <form onSubmit={handleSubmit}>
             {IsSignUp && (
@@ -80,8 +80,6 @@ function Auth() {
             )}
             <label htmlFor="password">
               <h4>Password</h4>
-              {!IsSignUp && <p>forgot password?</p>}
-
               <input
                 type="password"
                 name="password"
@@ -90,11 +88,17 @@ function Auth() {
                   setPassword(e.target.value);
                 }}
               />
+              {!IsSignUp && <p>forgot password?</p>}
             </label>
-
-            <button type="submit" className="auth-btn">
-              {IsSignUp ? "Sign up" : "Log in"}
-            </button>
+            {IsSignUp ? (
+              <button type="submit" className="auth-btn-sign">
+                Sign up
+              </button>
+            ) : (
+              <button type="submit" className="auth-btn">
+                Log in
+              </button>
+            )}
           </form>
           <p>
             {IsSignUp ? "Already have an account!" : "Don't have an Account!"}

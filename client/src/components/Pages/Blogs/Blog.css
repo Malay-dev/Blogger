@@ -1,0 +1,44 @@
+.delete-icon,
+.edit-icon {
+  display: inline-block;
+  margin: 0;
+  padding: 1rem;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  margin-left: 3rem;
+}
+.delete-icon {
+  background-color: red;
+}
+.edit-icon {
+  background-color: #ffd974;
+}
+
+.blog {
+    margin-left: 4.2rem;
+    margin-right: 4.2rem;
+    max-width:1000px;
+  }
+  .blog-title {
+    font-size: 4.4rem;
+    margin-bottom: 1.6rem;
+    display: inline-block;
+  }
+  .blog-content {
+    font-size:1.4rem;
+  }
+  .author {
+    font-size: 1rem;
+  }
+
+  .blog-details-container-2{
+    display: flex;
+
+  }
+
+  .blog-actions-user{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }

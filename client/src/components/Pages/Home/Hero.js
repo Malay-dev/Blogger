@@ -18,41 +18,7 @@ function Hero() {
     }
     navigate(link);
   };
-    // var blogsList = {
-    //   data: [
-    //     {
-    //       _id: "1",
-    //       upVotes: 3,
-    //       downVotes: 2,
-    //       blogTitle: "What is a function?",
-    //       blogBody: "It meant to be",
-    //       userPosted: "mano",
-    //       userId: 1,
-    //       postedOn: "jan 1",
-    //     },
-    //     {
-    //       _id: "2",
-    //       upVotes: 3,
-    //       downVotes: 2,
-    //       blogTitle: "What is a function?",
-    //       blogBody: "It meant to be",
-    //       userPosted: "mano",
-    //       userId: 1,
-    //       postedOn: "jan 1",
-    //     },
-    //     {
-    //       _id: "3",
-    //       upVotes: 3,
-    //       downVotes: 2,
-    //       blogTitle: "What is a function?",
-    //       blogBody: "It meant to be",
-    //       userPosted: "mano",
-    //       userId: 1,
-    //       postedOn: "jan 1",
-    //     },
-    //   ],
-    // };
-
+   
   const location = useLocation();
   return (
     <div className="home-main-bar">

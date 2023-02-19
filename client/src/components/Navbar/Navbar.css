@@ -1,0 +1,53 @@
+.nav-fixed {
+position: fixed;
+}
+.nav {
+/* position: fixed; */
+    height: 7.2rem;
+    background-color: #af50f3;
+    color: #333;  
+    display: flex;
+    font-size: 2rem;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.6rem;
+    }
+.nav-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4.8rem;
+    color: #fff;
+}
+.nav-logo {
+    font-weight: 700;
+    font-size: 5rem;
+    color: #000;
+    font-family: "Times New Roman", Times, serif;
+}
+.nav-link {
+    text-decoration: none;
+    color: #000;
+}
+
+
+.nav-btn {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 1rem 1.6rem;
+    border-radius: 25px;
+color: #fff;
+background-color: black;
+}
+.nav-btn:hover {
+transform: translateY(-2px);
+transition: all 0.3s;
+}
+
+.nav-logout{
+    display: flex;
+    align-items: center;
+    gap: 2.8rem;
+}

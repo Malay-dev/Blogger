@@ -32,32 +32,32 @@ export default function Navbar() {
   }, [User?.token, dispatch]);
 
   return (
-    <div className="Navbar">
-      <nav>
-        <Link to="/" className="nav-item  nav-logo">
-          <img src="" alt="logo" className="logo" />
+    <div>
+      <nav className="nav">
+        <Link to="/" className="nav-link nav-logo">
+          <p className="nav-logo">B</p>
         </Link>
 
-        <div>
+        <div className="nav-text">
           {User === null ? (
-            <Link to="/Auth" className="nav-item nav-link">
+            <Link to="/Auth" className="nav-btn nav-link">
               Log In
             </Link>
           ) : (
-            <div className="user-details-logout">
+            <div className="nav-item nav-link nav-logout">
               <Link
                 to={`/Users/${User?.result?._id}`}
                 style={{ textDecoration: "none" }}>
                 <Avatar
-                  backgroundColor={"#009dff"}
-                  px="35px"
-                  py="35px"
-                  color={"white"}
+                  backgroundColor={"#fff"}
+                  px="50px"
+                  py="50px"
+                  color={"black"}
                   borderRadius="50%">
                   {" " + User.result.name.charAt(0).toUpperCase() + " "}
                 </Avatar>
               </Link>
-              <button className="nav-item nav-link" onClick={handleLogout}>
+              <button className="nav-btn nav-link" onClick={handleLogout}>
                 Log Out
               </button>
             </div>

@@ -1,23 +1,23 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import moment from "moment";
-
+import "./Blogs.css";
 function Blogs({ blog }) {
   return (
-    <div className="display-blog-container">
-      <div className="display-votes">
-        {/* <p>{blog.upVote.length - blog.downVote.length}</p> */}
-        <p>votes</p>
-      </div>
+    <div className="story">
       <div className="display-blog-details">
-        <Link to={`/Post/${blog._id}`} className="display-blog-title">
+        <Link to={`/Post/${blog._id}`} className="each-story-heading">
           {blog.blogTitle}
         </Link>
         <div className="display-post-time">
           <p className="display-time">
-            posted {moment(blog.postedOn).fromNow()} {blog.userPosted}
+            {moment(blog.postedOn).fromNow()} {blog.userPosted}
           </p>
         </div>
+      </div>
+      <div className="display-votes">
+        <p>{blog.upVote.length - blog.downVote.length}</p>
+        <p>votes</p>
       </div>
     </div>
   );
