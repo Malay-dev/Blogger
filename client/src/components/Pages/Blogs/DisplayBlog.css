@@ -1,0 +1,62 @@
+.display-comments{
+    width: 100%;
+    line-height: 0.5;
+    border-bottom: solid 1px rgba(0, 0, 0, 0.112);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.post-comment-container form input{
+    width: 100% !important;
+    border: 0 !important;  
+    outline: none !important;   
+}
+.post-comment-container .form-page{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.comment-info{
+    display: flex;
+    font-size: smaller;
+   
+}
+.comment-info-container{
+    display: flex;
+}
+.comment-controls{
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.comment-controls button{
+    background-color: transparent;
+    border: none;
+    padding: 5px 0px;
+    margin: 0px 10px 0px 0px;
+    text-decoration: none;
+    color: #939292;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+}
+.comment-controls button:active{
+    border-bottom: solid 2px black;
+}
+.comment-controls button:hover{
+    color: #000 ;
+}
+.edit-cancel-btn{
+    text-decoration: none;
+    border:none;
+    fill: #939292;
+    outline: none;
+    background: none;
+    cursor: pointer;
+}   
+.edit-cancel-btn :hover{
+    fill: red;
+    transform: scale(1.05);
+}

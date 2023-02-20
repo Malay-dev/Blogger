@@ -182,7 +182,7 @@ function BlogDetails() {
                 <section>
                   <h4>Comments</h4>
                   <DisplayComments key={blog._id} blog={blog}></DisplayComments>
-                  <section className="comment-comtainer">
+                  <section className="post-comment-container">
                     <form
                       onSubmit={(e) => {
                         handleCommentSubmit(e);
