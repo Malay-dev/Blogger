@@ -8,7 +8,6 @@ import DisplayBlog from "./components/Pages/Blogs/DisplayBlog";
 import PostBlog from "./components/Pages/Home/PostBlog/PostBlog";
 import Users from "./components/Pages/Users/Users";
 import UserProfile from "./components/Pages/UserProfile/UserProfile";
-import UserProfile_ from "./components/Pages/UserProfile/UserProfile_";
 function RouterTemp() {
   return (
     <Routes>
@@ -18,7 +17,7 @@ function RouterTemp() {
       <Route path="/PostBlog" element={<PostBlog></PostBlog>}></Route>
       <Route path="/Post/:id" element={<DisplayBlog></DisplayBlog>}></Route>
       <Route path="/Users" element={<Users></Users>}></Route>
-      <Route path="/Users/:id" element={<UserProfile_></UserProfile_>}></Route>
+      <Route path="/Users/:id" element={<UserProfile></UserProfile>}></Route>
     </Routes>
   );
 }

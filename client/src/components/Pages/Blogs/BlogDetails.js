@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams, Link, useNavigate, useLocation } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 
 import DisplayComments from "./DisplayComments";
 import Avatar from "../../Avatar/Avatar";
@@ -67,7 +67,7 @@ function BlogDetails() {
   // ];
 
   const user = useSelector((state) => state.currentUserReducer);
-  const location = useLocation();
+
   //   const url = `https://stack-overflow-x.netlify.app${location.pathname}`;
 
   const navigate = useNavigate();
@@ -100,10 +100,18 @@ function BlogDetails() {
     dispatch(deleteBlog(id, navigate));
   };
   const handleUpVote = () => {
-    dispatch(voteBlog(id, "upVote", user.result._id));
+    try {
+      dispatch(voteBlog(id, "upVote", user.result._id));
+    } catch (error) {
+      alert("Please Log in to up Vote");
+    }
   };
   const handleDownVote = () => {
-    dispatch(voteBlog(id, "downVote", user.result._id));
+    try {
+      dispatch(voteBlog(id, "downVote", user.result._id));
+    } catch (error) {
+      alert("Please Log in to donw Vote");
+    }
   };
 
   return (
@@ -128,13 +136,15 @@ function BlogDetails() {
                             {user?.result?._id === blog?.userId && (
                               <button
                                 type="button"
-                                className=""
+                                className="btn btn-delete"
                                 onClick={handleDelete}>
-                                Delete
+                                <span className="mdi mdi-delete mdi-24px"></span>
+                                <span className="mdi mdi-delete-empty mdi-24px"></span>
+                                <span>Delete</span>
                               </button>
                             )}
                           </div>
-                          <div>
+                          <div className="user-posted-details">
                             <p>posted {moment(blog.postedOn).fromNow()}</p>
                             <Link
                               to={`/Users/${blog.userId}`}
@@ -149,8 +159,8 @@ function BlogDetails() {
                                   ?.charAt(0)
                                   ?.toLocaleUpperCase()}
                               </Avatar>
-                              <div className="author">{blog.userPosted}</div>
                             </Link>
+                            <div className="author">{blog.userPosted}</div>
                           </div>
                         </div>
                         <div className="blog-votes">
@@ -172,7 +182,7 @@ function BlogDetails() {
                 <section>
                   <h4>Comments</h4>
                   <DisplayComments key={blog._id} blog={blog}></DisplayComments>
-                  <section>
+                  <section className="comment-comtainer">
                     <form
                       onSubmit={(e) => {
                         handleCommentSubmit(e);

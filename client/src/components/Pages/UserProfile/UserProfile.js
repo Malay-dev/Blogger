@@ -3,7 +3,6 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-import Avatar from "../../Avatar/Avatar";
 import EditProfileForm from "./EditProfileForm";
 import ProfileBio from "./ProfileBio";
 import "./UserProfile.css";
@@ -27,12 +26,8 @@ const calendar = (
     <path d="M160 32V64H288V32C288 14.33 302.3 0 320 0C337.7 0 352 14.33 352 32V64H400C426.5 64 448 85.49 448 112V160H0V112C0 85.49 21.49 64 48 64H96V32C96 14.33 110.3 0 128 0C145.7 0 160 14.33 160 32zM0 192H448V464C448 490.5 426.5 512 400 512H48C21.49 512 0 490.5 0 464V192zM64 304C64 312.8 71.16 320 80 320H112C120.8 320 128 312.8 128 304V272C128 263.2 120.8 256 112 256H80C71.16 256 64 263.2 64 272V304zM192 304C192 312.8 199.2 320 208 320H240C248.8 320 256 312.8 256 304V272C256 263.2 248.8 256 240 256H208C199.2 256 192 263.2 192 272V304zM336 256C327.2 256 320 263.2 320 272V304C320 312.8 327.2 320 336 320H368C376.8 320 384 312.8 384 304V272C384 263.2 376.8 256 368 256H336zM64 432C64 440.8 71.16 448 80 448H112C120.8 448 128 440.8 128 432V400C128 391.2 120.8 384 112 384H80C71.16 384 64 391.2 64 400V432zM208 384C199.2 384 192 391.2 192 400V432C192 440.8 199.2 448 208 448H240C248.8 448 256 440.8 256 432V400C256 391.2 248.8 384 240 384H208zM320 432C320 440.8 327.2 448 336 448H368C376.8 448 384 440.8 384 432V400C384 391.2 376.8 384 368 384H336C327.2 384 320 391.2 320 400V432z" />
   </svg>
 );
-const pen = (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width={"15px"}>
-    <path d="M362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32zM421.7 220.3L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3z" />
-  </svg>
-);
-function UserProfile() {
+
+function UserProfile_() {
   const { id } = useParams();
   const users = useSelector((state) => state.usersReducer);
   const currentProfile = users.filter((user) => user._id === id)[0];
@@ -40,42 +35,30 @@ function UserProfile() {
   const currentUser = useSelector((state) => state.currentUserReducer);
   const [Switch, setSwitch] = useState(false);
   return (
-    <div>
-      <div className="user-profile-container-1">
-        <div className="user-profile-container-2">
-          <section>
-            <div className="user-details-container">
-              <div className="user-details">
-                <Avatar
-                  backgroundColor={"purple"}
-                  color="white"
-                  fontSize={"50px"}
-                  py="150px"
-                  px="150px">
-                  {currentProfile?.name.charAt(0).toUpperCase()}
-                </Avatar>
-                <div className="user-name">
-                  <h1>{currentProfile?.name}</h1>
-                  <p>
-                    {birthdayCake} Age{" "}
-                    {moment().diff(currentProfile?.dob, "years")} years
-                  </p>
-                  <p>
-                    {calendar} Joined{" "}
-                    {moment(currentProfile?.joinedOn).fromNow()}
-                  </p>
-                </div>
-              </div>
-              {currentUser?.result?._id === id && (
-                <button
-                  type="button"
-                  onClick={() => setSwitch(true)}
-                  className="edit-profile-btn">
-                  {pen} Edit Profile
-                </button>
-              )}
+    <div className="profile-container">
+      <main className="profile">
+        <div className="profile-bg"></div>
+        <section className="container-profile-inner">
+          <aside className="profile-image">
+            <div className="camera">
+              <p className="profile-initals fas fa-camera ">
+                {currentProfile?.name.charAt(0).toUpperCase()}
+              </p>
             </div>
-            <>
+          </aside>
+          <section className="profile-info">
+            <h1 className="first-name">{currentProfile?.name}</h1>
+            <div className="profile-info-secondary">
+              <h2>{birthdayCake} Age</h2>
+              <p> {moment().diff(currentProfile?.dob, "years")} years</p>
+            </div>
+            <div className="profile-info-secondary">
+              <h2>{calendar} Joined </h2>
+              <p> {moment(currentProfile?.joinedOn).fromNow()}</p>
+            </div>
+
+            <h2>ABOUT</h2>
+            <p>
               {Switch ? (
                 <EditProfileForm
                   currentUser={currentUser}
@@ -83,12 +66,35 @@ function UserProfile() {
               ) : (
                 <ProfileBio currentProfile={currentProfile}></ProfileBio>
               )}
-            </>
+            </p>
           </section>
-        </div>
-      </div>
+        </section>
+        <section className="statistics">
+          <button className="icon arrow left"></button>
+          <button className="icon arrow right"></button>
+          <p>
+            <strong>29</strong> Followers
+          </p>
+          <p>
+            <strong>184</strong> Following
+          </p>
+          <p>
+            <strong>6</strong> Likes
+          </p>
+        </section>
+        <button className="icon close">
+          {currentUser?.result?._id === id && (
+            <button
+              type="button"
+              onClick={() => setSwitch(true)}
+              className="edit-btn">
+              Edit Profile
+            </button>
+          )}
+        </button>
+      </main>
     </div>
   );
 }
 
-export default UserProfile;
+export default UserProfile_;

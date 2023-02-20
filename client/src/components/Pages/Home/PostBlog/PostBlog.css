@@ -8,11 +8,14 @@
     margin: 0 auto;
   }
   .compose {
-    background-color: #ffc62e;
-    border-radius: 2.5rem;
+    background-color: #9ab1ff;
+    border-radius: 20px;
+    width: 40%;
+    min-width: 10rem;
     box-shadow: 0 10px 25px rgb(0 0 0/5%),0 20px 48px rgb(0 0 0/5%),0 1px 4px rgba(0,0,0,.1);
-    padding: 20px;
-    overflow: hidden;
+    padding: 10px 80px;
+   
+    
 }
   /* .compose {
     box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
@@ -22,7 +25,7 @@
     overflow: hidden;
   } */
   .compose-title {
-    font-size: 1.4rem;
+    font-size: 2.4rem;
     margin-bottom: 1rem;
   }
   .compose-text-box {
@@ -49,4 +52,32 @@
     margin: 25px 0;
     padding: 10px;
     transition: .3s;
+    width: fit-content;
+  }
+
+  .compose input{
+    border: none;
+    padding: 0.5rem;
+    width: 100%;
+    border-radius: 10px;
+  }
+  .compose textarea{
+    resize: none;
+    border: none;
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 10px;
+  }
+
+  .compose-label{
+    display: block;
+    margin-top: 0.5rem;
+    margin-bottom: 0.2rem;
+  }
+  .compose-form{
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
   }
